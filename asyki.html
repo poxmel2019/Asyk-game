@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asy oyini</title>
+	<meta charset = 'utf-8'>
+</head>
+<style>
+body {
+background-image: url("./components/orna2.png");
+}
+#container {
+  width: 400px;
+  height: 400px;
+  background-image: url("./components/grass5.jpg");
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+ }
+
+
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  <!--background-color: red;-->
+  }
+  
+#hand {
+  width: 70px;
+  height: 70px;
+  position: static;
+  margin: right;
+}
+#posi {
+	color: white;
+	text-align: center;
+	font-family: Verdana;
+}
+#inf {
+	color: white;
+	text-align: center;
+	text-shadow: 3px 2px white;
+	
+}
+#inf h2 a{
+	color: brown;
+}
+</style>
+<body>
+
+
+<div id ="container">
+  <div id="inf"><h2><a href="./components/info.html">Info</a></h2></div>
+  <br>
+  <br>
+  <div><img src="./components/hand.png" id = "hand" onclick="myMove()"></div>
+  
+  <img src = "./components/asyk.png" id = "animate" onclick="fun()" 
+ title="Это асык. Асык - это маленькая кость, находящаяся между берцовой костью и голенью крупного скота, архара, горного козла, барана, козы, косули, сайгака.">
+  <br>
+  <br>
+  <div><h2 id="posi"><h2></div>
+</div>
+
+
+
+
+<script>
+
+function myMove() {
+  var poss = ['', 'Alshy','Buk','Ompi','Taike','Chik','Shonka']; 
+  var elem = document.getElementById("animate");   
+  var pos = 590;
+  var id = setInterval(frame, 1);
+  var posi = document.getElementById("posi");
+  function frame() {
+	
+    if (pos == 900) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      //elem.style.bottom = pos + "px"; 
+      elem.style.left = pos + "px"; 
+	  posi.innerHTML = poss[Math.floor(Math.random() * 6) + 1];
+	  
+    }
+  }
+  
+}
+
+</script>
+
+</body>
+</html>
